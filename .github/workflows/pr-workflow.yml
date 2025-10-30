@@ -1,0 +1,57 @@
+name: PR Workflow
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  delete-branch:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Call Webhook to Get Deployment Secrets
+        id: get_secrets
+        run: |
+          # Make a GET request to your webhook
+          response=$(curl -s -X GET https://automation.octacer.info/webhook/get-deployment-secrets \
+            -H "Content-Type: application/json" \
+            -d '{"repo": "${{ github.repository }}", "branch": "development"}')
+          
+          # Extract secrets from webhook response
+          GHCR_USERNAME=$(echo $response | jq -r '.GHCR_USERNAME')
+          GHCR_TOKEN=$(echo $response | jq -r '.GHCR_TOKEN')
+
+      
+          echo "GHCR_USERNAME=$GHCR_USERNAME" >> $GITHUB_ENV
+          echo "GHCR_TOKEN=$GHCR_TOKEN" >> $GITHUB_ENV
+
+      - name: Delete Source Branch
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ env.GHCR_TOKEN }}
+          script: |
+            const branch = context.payload.pull_request.head.ref;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            // Skip protected branches
+            if (branch === 'main' || branch === 'development') {
+              console.log(`Skipping deletion of protected branch: ${branch}`);
+              return;
+            }
+
+            try {
+              await github.rest.git.deleteRef({
+                owner: owner,
+                repo: repo,
+                ref: `heads/${branch}`
+              });
+              console.log(`✅ Successfully deleted branch: ${branch}`);
+            } catch (error) {
+              console.log(`⚠️ Branch ${branch} was already deleted or protected.`);
+            }

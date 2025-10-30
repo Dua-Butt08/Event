@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8c42;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle with gradient -->
+  <circle cx="96" cy="96" r="88" fill="url(#brandGradient)"/>
+  
+  <!-- Letter B -->
+  <path d="M60 48 L60 144 L105 144 Q126 144 126 123 Q126 108 114 102 Q126 96 126 81 Q126 60 105 60 L60 60 Z M78 78 L99 78 Q108 78 108 87 Q108 96 99 96 L78 96 Z M78 108 L102 108 Q114 108 114 120 Q114 126 102 126 L78 126 Z" fill="#ffffff"/>
+</svg>

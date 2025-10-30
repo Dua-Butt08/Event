@@ -1,0 +1,54 @@
+# ===========================================
+# EVENTS EXPERT - DOCKER COMPOSE
+# ===========================================
+# Development environment with PostgreSQL
+
+version: '3.8'
+
+services:
+  # ===========================================
+  # APPLICATION SERVICE
+  # ===========================================
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://ential:OctaEntial2025@db:5432/ential
+      - DIRECT_DATABASE_URL=postgresql://ential:OctaEntial2025@db:5432/ential
+      - NEXTAUTH_URL=http://localhost:3000
+      - NEXTAUTH_SECRET=your-nextauth-secret-here
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./.env:/app/.env:ro
+    restart: unless-stopped
+
+  # ===========================================
+  # DATABASE SERVICE
+  # ===========================================
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: ential
+      POSTGRES_USER: ential
+      POSTGRES_PASSWORD: OctaEntial2025
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./prisma/schema.prisma:/docker-entrypoint-initdb.d/schema.prisma:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ential -d ential"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

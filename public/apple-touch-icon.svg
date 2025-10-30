@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <defs>
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8c42;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background with rounded corners for Apple -->
+  <rect x="0" y="0" width="180" height="180" rx="32" ry="32" fill="url(#brandGradient)"/>
+  
+  <!-- Letter B -->
+  <path d="M56 44 L56 136 L98 136 Q118 136 118 116 Q118 102 107 97 Q118 92 118 78 Q118 58 98 58 L56 58 Z M73 73 L93 73 Q101 73 101 81 Q101 89 93 89 L73 89 Z M73 102 L96 102 Q106 102 106 112 Q106 117 96 117 L73 117 Z" fill="#ffffff"/>
+</svg>

@@ -1,0 +1,54 @@
+
+[
+{
+"payload": 
+{
+"role": 
+"assistant",
+"content": 
+{
+"version": 
+"1.1",
+"persona": 
+{
+"name": 
+"Overwhelmed Modern Mother",
+"notes": 
+"A mother juggling work, parenting and societal expectations, frequently experiencing guilt, burnout and pressure to perform at unattainable standards. Likely between the ages of 30–45, she is introspective, intent on doing what's best for her children, yet often lacks adequate support."
+},
+"milestone": 
+{
+"title": 
+"Dismantling the 'Supermom' Myth",
+"theme": 
+"Challenging societal and internalised parenting ideals",
+"order": 
+1
+},
+"sub_topics": 
+[
+],
+"meta": 
+{
+"source_char_count": 
+13881,
+"extraction_notes": 
+[
+"Persona was inferred based on content focus on working mothers and emotional burden.",
+"Milestone title extracted directly from markdown.",
+"Milestone order taken from 1.1 marker.",
+"Each sub-topic corresponds with 1.1.x headings.",
+"Sub-sub-topics were generated per instruction, expanding each provided sub-topic heading."
+],
+"confidence": 
+0.98
+}
+},
+"refusal": 
+null,
+"annotations": 
+[
+]
+}
+}
+]

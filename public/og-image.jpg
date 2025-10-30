@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d2d2d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8c42;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Brand Circle -->
+  <circle cx="180" cy="315" r="80" fill="url(#brandGradient)" stroke="#ffffff" stroke-width="3"/>
+  
+  <!-- Letter B -->
+  <path d="M150 275 L150 355 L185 355 Q200 355 200 345 Q200 335 190 330 Q200 325 200 315 Q200 305 185 305 L150 305 Z M165 315 L180 315 Q185 315 185 320 Q185 325 180 325 L165 325 Z M165 335 L182 335 Q190 335 190 342 Q190 345 182 345 L165 345 Z" fill="#ffffff"/>
+  
+  <!-- Main Text -->
+  <text x="320" y="280" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#ffffff">
+    Brody Lee Marketing
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="320" y="340" font-family="Arial, sans-serif" font-size="36" fill="url(#brandGradient)">
+    Strategic Marketing &amp; Brand Development
+  </text>
+  
+  <!-- Description -->
+  <text x="320" y="390" font-family="Arial, sans-serif" font-size="28" fill="#cccccc">
+    Transform your brand with data-driven strategies
+  </text>
+  
+  <!-- Stats -->
+  <text x="320" y="450" font-family="Arial, sans-serif" font-size="24" fill="#ff6b35">
+    200% Average ROI Increase • 50+ Successful Campaigns
+  </text>
+  
+  <!-- Decorative elements -->
+  <circle cx="1050" cy="150" r="40" fill="url(#brandGradient)" opacity="0.3"/>
+  <circle cx="1100" cy="480" r="30" fill="url(#brandGradient)" opacity="0.2"/>
+  <circle cx="950" cy="500" r="25" fill="#ffffff" opacity="0.1"/>
+</svg>
