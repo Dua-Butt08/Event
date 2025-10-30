@@ -29,7 +29,6 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   skipTrailingSlashRedirect: true,
 
-  srcDir: "src",
   // Performance optimizations
   poweredByHeader: false,
   compress: true,
